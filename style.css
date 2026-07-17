@@ -918,7 +918,16 @@ footer {
 @media (max-width: 768px) {
     html { scroll-padding-top: 100px; }
     .header { width: 95%; top: 10px; }
-    .navbar { padding: 1rem 1.5rem; flex-direction: row; align-items: center; justify-content: space-between; border-radius: var(--radius-lg); }
+    .navbar { 
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8rem 1rem; 
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; 
+        border-radius: var(--radius-lg); 
+    }
     
     .menu-toggle { display: flex; }
     
