@@ -973,9 +973,15 @@ footer {
     .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
     
     .contact-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 3rem;
         padding: 3rem 2rem;
+        width: 100%;
+    }
+    
+    .contact-info-wrap, .contact-form-wrap {
+        width: 100%;
     }
 }
 
