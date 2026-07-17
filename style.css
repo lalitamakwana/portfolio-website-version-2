@@ -917,16 +917,28 @@ footer {
 
 @media (max-width: 768px) {
     html { scroll-padding-top: 100px; }
-    .header { width: 95%; top: 10px; }
+    .header { 
+        width: 100%; 
+        left: 0; 
+        right: 0; 
+        padding: 0; 
+        transform: none;
+        top: 0;
+    }
     .navbar { 
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0.8rem 1rem; 
+        width: calc(100% - 24px);
+        max-width: none;
+        margin: 12px auto;
+        padding: 14px 18px; 
         display: flex;
-        flex-direction: row; 
-        align-items: center; 
         justify-content: space-between; 
+        align-items: center; 
+        box-sizing: border-box;
+        overflow: visible;
         border-radius: var(--radius-lg); 
+    }
+    .logo {
+        font-size: 1.3rem;
     }
     
     .menu-toggle { display: flex; }
