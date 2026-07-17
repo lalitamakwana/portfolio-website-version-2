@@ -25,7 +25,12 @@
     <header class="header">
         <nav class="navbar">
             <div class="logo"><span class="logo-code">&lt;LM /&gt;</span> Lalita.</div>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -406,6 +411,23 @@
         }, navObserverOptions);
 
         sections.forEach(section => navObserver.observe(section));
+
+        // Mobile Navigation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinksContainer = document.getElementById('nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+            });
+        });
 
         // Background Particles
         const createParticles = () => {
